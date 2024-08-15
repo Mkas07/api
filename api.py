@@ -24,6 +24,10 @@ locations = [
     'University Road'
 ]
 
+@app.route('/check')
+def check():
+    return("working")
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
@@ -74,4 +78,4 @@ def predict():
     
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0",port=8080)
